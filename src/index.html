@@ -7,8 +7,75 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      background: black;
+    }
+
+    @-webkit-keyframes spinner {
+      from {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      from {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+    .spinner {
+      position: fixed;
+      width: 34px;
+      height: 34px;
+      top: 50%;
+      left: 50%;
+      margin-left: -17px;
+      margin-top: -17px;
+    }
+    .spinner:after, .spinner:before {
+      content: "";
+      position: fixed;
+      border: 2px solid white;
+      width: 30px;
+      height: 30px;
+    }
+    .spinner:after {
+      -webkit-animation: spinner 2.5s linear infinite;
+              animation: spinner 2.5s linear infinite;
+    }
+    .spinner:before {
+      width: 44px;
+      height: 44px;
+      margin-left: -7px;
+      margin-top: -7px;
+      -webkit-animation: spinner 2.5s linear infinite;
+              animation: spinner 2.5s linear infinite;
+      animation-direction: reverse;
+    }
+
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <noscript>
+      <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+          Sorry, but app is not available without javascript
+      </h3>
+    </noscript>
+    <nav 
+      style="background-color: #673ab7; height: 56px; width: 100%">
+    </nav>
+    <div class="spinner"></div>
+  </app-root>
 </body>
 </html>
