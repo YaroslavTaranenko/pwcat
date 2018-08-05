@@ -8,6 +8,7 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
+      
       "schematics": {},
       "architect": {
         "build": {
@@ -18,9 +19,11 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
+            "serviceWorker": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.css"
@@ -77,7 +80,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "manifest.json"
             ]
           }
         },
